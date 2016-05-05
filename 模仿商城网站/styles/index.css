@@ -1,0 +1,154 @@
+/*以下为轮播*/
+#lunbo{
+	position:              absolute;
+	top:                   0px;
+	left:                  199px;
+	width:                 550px;
+	height:                320px;
+	
+}
+#lunbo #lunboTop img.hide{
+	display:              none;
+}
+#lunbo #lunboTop img{
+	position:             absolute;
+}
+#lunbo #lunboBottom{
+	position:              absolute;
+	top:                   278px;
+	left:                  0px;
+	width:                 550px;
+	height:                43px;
+}
+#lunbo #lunboBottom a{
+	float:                 left;
+	width:                 109px;
+	height:                43px;
+	background:            #4a4a4a;
+	
+	margin-left:           1px;
+	text-align:            center;
+	line-height:           15px;	
+}
+#lunbo #lunboBottom a.opa{
+	background:            #37a7d7;
+	background:            url("../images/adindex.gif") no-repeat center 40px #37A7D7;
+    color:                 #FFFFFF;
+}
+#lunbo #lunboBottom a p{
+	margin-top:            6px;
+}
+
+#lunbo #lunboBottom a:visited,#lunbo #lunboBottom a{
+	color:                 white;
+}
+
+/*以下为上边栏*/
+#sidebarTop{
+	position:              absolute;
+	top:                   0px;
+	left:                  761px;
+	width:                 230px;
+	height:                176px;
+	overflow:              hidden;
+}
+#sidebarTop a.amaze img{
+	transition:            1s all;
+	-moz-transition:       1s all;
+}
+#sidebarTop a:hover img{
+	transform:             rotate(720deg);
+	-moz-transform:        rotate(315deg);
+}
+/*以下为下边栏*/
+#sidebarBottom{
+	position:              absolute;
+	top:                   188px;
+	left:                  761px;
+	width:                 230px;
+	height:                145px;
+	border:                1px solid #ccc;
+}
+#sidebarBottom h4{
+	border-bottom:         1px solid #ccc;
+	height:                24px;
+	line-height:           24px;
+	padding-left:          10px;
+}
+#sidebarBottom ul li{
+	height:                23px;
+	line-height:           24px;
+	padding-left:          10px;
+}
+
+#sidebarBottom ul li a:visited{
+	color:                 #222;
+}
+/*以下为轮播横图*/
+#bottom{
+	position:              absolute;
+	width:                 790px;
+	height:                230px;
+	top:                   345px;
+	left:                  199px;
+	
+}
+#bottom h4{
+	border-bottom:         1px solid #ccc;
+	height:                24px;
+	line-height:           24px;
+	padding-left:          10px;
+}
+
+#bottom #bottomList a{
+	float:                 left;
+	background:            #e4e4e4;
+	margin-left:           10px;
+	padding:               3px;
+	width:                 36px;
+	font-family:           "宋体";
+	text-align:            center;
+	height:                14px;
+	line-height:           14px;
+}
+#bottom #bottomList a:visited{
+	color:                 black;
+}
+#bottom #bottomList{
+	position:              absolute;
+	left:                  570px;
+	top:                   5px;
+}
+#bottom #bottomList a.current{
+	background:            #fa5889;
+}
+#bottom #box1{
+	top:                   36px;
+	position:              absolute;
+	width:                 780px;
+	left:                  0px;
+	overflow:              hidden;
+	
+	height:                189px;
+}
+#bottom ul{
+	position:              absolute;
+	
+	
+	width:                 3200px;
+}
+#bottom ul li{
+	float:                 left;
+	margin-left:           12px;
+}
+#bottom ul li p{
+	background:            #efefef;
+	text-align:            center;
+	height:                25px;
+	line-height:           25px;
+	letter-spacing:        2px;
+	font-family:           "宋体";
+}
+#bottom ul li p a:visited{
+	color:                 #4a4a4a;
+}

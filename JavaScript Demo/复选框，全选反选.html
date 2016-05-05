@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>复选框，全选/反选</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+			#container{
+				width:             150px;
+				margin:            10px auto;
+				border:            1px solid #333;
+				border-radius:     10px;
+				font-size:         0.8em;
+				padding-bottom:    10px;
+			}
+			#box{
+				width:             130px;
+				margin:            0 auto;
+
+				border-bottom:     1px solid #333;
+				padding:           10px 0px 10px 0;
+			}
+
+			label{
+				display:           inline-block;
+				margin-right:      10px;
+			}
+			label.color{
+				color:             #1534f2;
+				cursor:            pointer;
+			}
+			input{
+				vertical-align:    middle;
+				display:           inline-block;
+				margin-right:      10px;
+			}
+			ul li{
+				list-style:        none;
+				padding-left:      10px;
+				padding-top:       10px;
+			}
+		</style>
+		<script type = "text/javascript">
+		    window.onload = function () {
+		    	var oFan = document.getElementById('box').getElementsByClassName('color')[0];
+                var aInput = document.getElementById('list').getElementsByTagName('input');
+                var oAll = document.getElementById('box').getElementsByTagName('input')[0];
+                var oTxt = document.getElementById('box').getElementsByTagName("label")[0];
+                //  以选中的数量来判断是否全选或全不选，利用循环查询的方式
+                var isCheckedAll = function () {
+                	for(var i = 0, n = 0; i < aInput.length; i++) {
+                		aInput[i].checked == true && n++;
+                	}
+                	
+                	oAll.checked = n === aInput.length;
+                	oTxt.innerHTML = oAll.checked ? "全不选" : "全选";
+                }
+
+                oFan.onclick = function () {
+                	for( var i = 0; i < aInput.length; i++){
+                		aInput[i].checked = aInput[i].checked == true ? false : true;                		
+                	}
+                	isCheckedAll(); 	
+                }
+                oAll.onclick = function () {
+                	for(var i = 0; i < aInput.length; i++){
+                		aInput[i].checked = this.checked == true ? true : false;
+                        
+                	}
+                	isCheckedAll();
+                }
+                for(let i = 0; i < aInput.length; i++) {
+                	aInput[i].onclick = function () {
+                		isCheckedAll();
+                	}
+                }
+                
+
+		    }
+		</script>
+	</head>
+	<body>
+	    <div id = "container">
+	        <div id = "box">
+	            <input type = "checkbox">
+	            <label>全 选</label>
+	            <label class = "color">反选</label>
+	        </div>
+	        <ul id = "list">
+	            <li><input type = "checkbox"><label>选项（一）</label></li>
+	            <li><input type = "checkbox"><label>选项（二）</label></li>
+	            <li><input type = "checkbox"><label>选项（三）</label></li>
+	            <li><input type = "checkbox"><label>选项（四）</label></li>
+	            <li><input type = "checkbox"><label>选项（五）</label></li>
+	            <li><input type = "checkbox"><label>选项（六）</label></li>
+	            <li><input type = "checkbox"><label>选项（七）</label></li>
+	            <li><input type = "checkbox"><label>选项（八）</label></li>
+	            <li><input type = "checkbox"><label>选项（九）</label></li>
+	            <li><input type = "checkbox"><label>选项（十）</label></li>
+	        </ul>
+
+	    </div>
+	    <center style = "font-size:0.8em;">1.切换全选/全部选文字；2、根据选中的个数实时更新全选框状态</center>
+	</body>
+</html>

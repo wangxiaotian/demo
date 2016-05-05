@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>显示点击处的坐标</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+			
+		</style>
+		<script type = "text/javascript">
+		document.onmousemove = function (event) {
+			var oBox = document.getElementsByTagName('div')[0];
+		    var event = event || window.event;
+		    document.body.innerHTML = ("坐标:[" + event.clientX + "," + event.clientY + "]")
+		}
+		</script>
+	</head>
+	<body>
+	    <div></div>
+	</body>
+</html>

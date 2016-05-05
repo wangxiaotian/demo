@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>简易JS年历</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+			#container{
+				width:             250px;
+				padding-top:       10px;
+				background:        #e6e1e1;
+				margin:            10px auto;
+				padding-bottom:    10px;
+			}
+			#container div{
+				width:             48px;
+				height:            44px;
+				background:        #4a4747;
+				color:             #fff;
+				float:             left;
+				margin-left:       10px;
+				margin-bottom:     10px;
+                border-radius:     1px;
+                text-align:        center;
+                padding:           2px 0;
+                cursor:            pointer;
+                border:            1px solid #4a4747;
+			}
+			#container div.current{
+				background:        #fff;
+				color:             #f00d3d;
+				border:            1px solid #333;
+			}
+			#container div span{
+				font-weight:       1px;
+				font-size:         0.8em;
+				padding-bottom:    10px;
+				
+			}
+			#container div span.month{
+				
+				font-weight:       bold;
+
+				
+				font-size:         1.2em;
+			}
+			#box{
+				display:           block;
+				width:             200px;
+				padding:           5px;
+				border:            1px solid #fff;
+				background:        #ecd1d1;
+				clear:             both;
+				margin:            0 auto;
+				font-size:         12px;
+				
+			}
+		</style>
+		<script type = "text/javascript">
+		    window.onload = function () {
+		    	var aDiv = document.getElementById('container').getElementsByTagName('div');
+		    	var oMonth = document.getElementById('month');
+		    	var oContent = document.getElementById('content');
+		    	var arr = [
+		    	    "元旦：1月1日至3日放假三天",
+		    	    "春节：2月2日至8日放假7天",
+		    	    "妇女节：3月8日妇女节，不放假",
+		    	    "清明节：4月3日至5日放假3天",
+		    	    "劳动节：4月30日至5月2日放假3天？",
+		    	    "儿童节：6月4日至6日放假3天，老喽",
+		    	    "小暑：7月7日小暑，没假期",
+		    	    "七夕节：8月6日七夕节，不放假",
+		    	    "中秋节：9月10日至12日放假三天，共婵娟",
+		    	    "国庆节：10月1日至7日放假7天",
+		    	    "立冬：11月8日立冬。不放假",
+		    	    "废除奴隶制国际日：12月2日。"
+		    	    ]
+		    	for(var i = 0; i < aDiv.length; i++){
+                    aDiv[i].index = i;
+                    
+		    		aDiv[i].onmouseover = function change (){
+                        for(var j = 0; j < aDiv.length; j++){
+                        	aDiv[j].className = "";
+                        } 
+                        this.className = "current";
+                        oMonth.innerHTML = (this.index + 1).toString();
+                        oContent.innerHTML = arr[this.index];
+
+		    		}
+
+		    	}
+		    	
+		    }
+		</script>
+	</head>
+	<body>
+	    <div id = "container">
+	        <div>
+	            <span class = "month">1</span><br>
+	            <span>JAN</span>
+	        </div>
+	        <div>
+	            <span class = "month">2</span><br>
+	            <span>FER</span>
+	        </div>
+	        <div>
+	            <span class = "month">3</span><br>
+	            <span>MAR</span>
+	        </div>
+	        <div>
+	            <span class = "month">4</span><br>
+	            <span>APR</span>
+	        </div>
+	        <div>
+	            <span class = "month">5</span><br>
+	            <span>MAY</span>
+	        </div>
+	        <div class = "current">
+	            <span class = "month">6</span><br>
+	            <span>JUN</span>
+	        </div>
+	        <div>
+	            <span class = "month">7</span><br>
+	            <span>JUL</span>
+	        </div>
+	        <div>
+	            <span class = "month">8</span><br>
+	            <span>AUG</span>
+	        </div><div>
+	            <span class = "month">9</span><br>
+	            <span>SEP</span>
+	        </div>
+	        <div>
+	            <span class = "month">10</span><br>
+	            <span>OCT</span>
+	        </div>
+	        <div>
+	            <span class = "month">11</span><br>
+	            <span>NOV</span>
+	        </div>
+	        <div>
+	            <span class = "month">12</span><br>
+	            <span>DEC</span>
+	        </div>
+	        <p id = "box">
+	            <span><span id = "month">6</span>  月节日</span><br>
+	            <span id = "content">端午节：6月4日至6日放假3天。</span>
+	        </p>
+	    </div>
+	</body>
+</html>

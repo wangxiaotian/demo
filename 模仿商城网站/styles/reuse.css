@@ -1,0 +1,187 @@
+*{
+	margin:                0px;
+	padding:               0px;
+}
+body{
+	
+	font:                  12px/1.5 tahoma,arial,\5b8b\4f53;
+}
+header{
+	
+	background:            #ececec;
+	
+}
+header #top{
+	position:              relative;
+	height:                66px;
+	width:                 990px;
+	
+	margin:                0 auto;
+}
+header #top #topI{
+	position:              absolute;
+	top:                   20px;
+	left:                  200px;
+	
+	color:                 #ccc;
+	width:                 168px;
+	height:                25px;
+}
+li{
+	list-style:            none;
+}
+a{
+	text-decoration:       none;
+	color:                 #aaa;
+}
+/*以下为导航条*/
+nav ul li .navbox dl dd a:hover,nav ul li .navbox dl dd a:visited{
+	
+	border-bottom:         1px solid #aaa;
+}
+nav{
+	background:            #4a4a4a;
+	width:                 990px;
+	height:                36px;
+	margin:                0 auto;
+}
+
+nav ul li{
+	position:              relative;
+	float:                 left;
+	
+	color:                 white;
+	margin-left:           30px;
+	height:                36px;
+	line-height:           36px;
+	font-weight:           bold;
+	font-size:             1.2em;
+	
+}
+nav ul li .navbox{
+	display:               none;
+}
+
+nav ul li .navbox{
+	position:              absolute;
+	top:                   36px;
+	left:                  0;
+	border:                1px solid #ccc;
+	width:                 475px;
+	height:                142px;
+	overflow:              hidden;
+	background:            #FFFFFF;
+	z-index:               1000;
+}
+nav ul li .navbox dl{
+	padding:               8px 0;
+	width:                 450px;
+	margin-left:           10px;
+	overflow:              hidden;
+}
+nav ul li .navbox dl.dlbox{
+	border-top:            1px dashed #ccc;
+}
+nav ul li .navbox dl dt{
+	float:                 left;
+	width:                 75px;
+	text-align:            center;
+	line-height:           16px;
+	font-size:             0.8em;
+	padding:               4px 0px;
+	
+}
+nav ul li .navbox dl dd{
+	float:                 left;
+	width:                 364px;
+	line-height:           25px;
+	font-weight:           normal;
+}
+nav ul li .navbox dl dd span{
+	float:                 left;
+	margin:                5px 0;
+	border-right:          1px solid #c4c4c4;
+	padding:               0px 6px;
+	white-space:           nowrap;
+	line-height:           14px;
+	text-align:            center;
+	font-size:             0.8em;
+	letter-spacing:        1px;
+}
+nav ul li a:visited{
+	color:                 white;
+}
+.navbox dl dd a:visited{
+	color:                 #444;
+}
+.navbox dl dt a:visited{
+	color:                 black;
+}
+/*以下为商品分类页*/
+
+#content{
+	position:              relative;
+	width:                 990px;
+	margin:                0 auto;
+}
+h3.search{
+	margin-top:            12px;
+	background:            #6e6e6e;
+	width:                 177px;
+	height:                30px;
+	line-height:           30px;
+	color:                 white;
+	font-size:             1.1em;
+	padding-left:          10px;
+}
+#content #search{
+	width:                 185px;
+    height:                548px;
+    border:                1px solid #6e6e6e;	
+}
+#content #search h4{
+	margin-left:           10px;
+	padding:               4px;
+}
+
+.hot{
+	background:            url("../images/hot.gif") no-repeat scroll 0 0 transparent;
+	position:              absolute;
+	width:                 21px;
+	height:                16px;
+    top:                   0;
+}
+#content #search table .promoted{
+	color:                 red;
+}
+table{
+	position:              relative;
+	left:                  10px;
+	border-top:            1px solid #eee;
+}
+table tr td{
+	width:                 70px;
+	height:                25px;
+	color:                 #444;
+	font-family:           "宋体";
+	position:              relative;
+}
+table tr td a:visited{
+	color:                 #444;
+}
+table tr td a:hover{
+	color:                 #081db8;
+}
+/*以下为页脚*/
+footer{
+	height:                50px;
+	text-align:            center;
+	margin:                0 auto;
+	
+}
+footer p{
+	
+	margin-top:            30px;
+	font-size:             1.2em;
+	font-family:           "宋体";
+}

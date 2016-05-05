@@ -1,0 +1,88 @@
+*{
+	margin:                 0;
+	padding:                0;
+}
+div.v_show{
+	position:               relative;
+	margin:                 100px 100px;
+	width:                  600px;
+	height:                 200px;
+	border:                 1px solid #ccc;
+	
+}
+li{
+	list-style:             none;
+}
+a{
+	text-decoration:        none;
+}
+div.v_caption{
+	position:               absolute;
+	width:                  600px;
+	height:                 45px;
+	border-bottom:          1px solid #333;
+	background-color:       #ccc;
+}
+h2.cartoon{
+	height:                 30px;
+	line-height:            30px;
+	margin:                10px;
+	
+}
+div.highlight_tip{
+	position:               absolute;
+	width:                  80px;
+	height:                 30px;
+	line-height:            35px;
+	text-align:             center;
+	
+	top:                    10px;
+	left:                   110px;
+	font-size:              0.8em;
+	color:                  #333;
+}
+div.highlight_tip span,div.change_btn span{
+	margin:                5px;
+}
+div.highlight_tip span.current{
+	background:             red;
+}
+div.change_btn{
+	position:               absolute;
+	height:                 30px;
+	width:                  120px;
+	line-height:            33px;
+	text-align:             center;
+	top:                    10px;
+	left:                   180px;
+	
+	font-size:              0.8em;
+	color:                  #333;
+}
+div.change_btn span{
+	cursor:                 pointer;
+}
+div.v_caption em{
+	position:               absolute;
+	top:                    10px;
+	height:                 30px;
+	line-height:            33px;
+	right:                  10px;
+}
+div.v_content{
+	position:               absolute;
+	width:                  500px;
+	height:                 120px;
+	top:                    70px;
+	left:                   50px;
+	overflow:               hidden;
+}
+.v_content .v_content_list ul {
+	position:               absolute;
+	width:                  2000px;
+}
+
+.v_content .v_content_list ul li {
+	float:                  left;
+	margin-left:            9px;
+}

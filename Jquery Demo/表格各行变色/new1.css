@@ -1,0 +1,22 @@
+table{
+	border:             1px solid #333;
+	width:              500px;
+	border-collapse:    collapse;
+	
+}
+
+
+td,th{
+	text-align:         left;
+	border:             1px solid #333;
+}
+
+.even{
+	background-color:  #fff38f;
+}
+.odd{
+	background-color:  #ccc;
+}
+.selected{
+	color:             green;
+}

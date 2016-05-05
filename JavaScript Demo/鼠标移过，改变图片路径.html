@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>鼠标移过，改变图片路径</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+			body{
+				background:        black;
+			}
+			#container{
+				font-size:         0;
+				width:             275px;
+				margin:            10px auto;
+				border:            1px solid #fff;
+				background:        #fff;
+				border-radius:     5px;
+				padding:           10px 5px 0 10px;
+			}
+			#box{
+				padding:           0px;
+				float:             left;
+				width:             215px;
+				height:            215px;
+				
+				border-radius:     40px;
+				overflow:          hidden;
+				margin-right:      5px;
+				
+			}
+			img{
+                margin:            0px 5px 5px 0;
+				width:             48px;
+				height:            48px;
+				border:            1px solid #fff;
+				border-radius:     5px;
+				overflow:          hidden;				
+				cursor:            crosshair;
+			}
+			#box img{
+				width:             215px;
+				height:            215px;
+
+			}
+		</style>
+		<script type = "text/javascript">
+		    window.onload = function () {
+		    	var aImg = document.querySelectorAll("#container>img");
+		    	var oSrc = document.getElementById('box').getElementsByTagName('img')[0];
+		    	
+		    	for( var i = 0; i < aImg.length; i++) {
+		    		aImg[i].index = i;
+		    		aImg[i].onmouseover = function () {
+		    			
+		    			oSrc.src = this.src
+		    		}
+		    	}
+		    	
+		    }
+		</script>
+	</head>
+	<body>
+	    <div id = "container">
+	        <div id = "box">
+	            <img src = "images/1a.jpg">
+	        </div>
+	        <img src = "images/1a.jpg">
+	        <img src = "images/2a.jpg">
+	        <img src = "images/3a.jpg">
+	        <img src = "images/4a.jpg">
+	        <img src = "images/5a.jpg">
+	        <img src = "images/6a.jpg">
+	        <img src = "images/7a.jpg">
+	        <img src = "images/8a.jpg">
+	        <img src = "images/9a.jpg">
+	        <img src = "images/10a.jpg">
+	        <img src = "images/11a.jpg">
+	        <img src = "images/12a.jpg">
+        
+	    </div>
+	</body>
+</html>

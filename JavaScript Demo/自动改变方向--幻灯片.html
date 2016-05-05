@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>自动改变方向--幻灯片效果</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+			body{
+				background:        black;
+
+			}
+			#container{
+				position:          relative;
+				width:             510px;
+				margin:            10px auto;
+                border:            1px solid #ccc;
+                background:        #fff;
+                border-radius:     5px;
+			}
+			#box{
+				width:             490px;
+				height:            170px;
+				border:            1px solid #ccc;
+				margin:            10px;
+				position:          relative;
+			}
+			#box img{
+				position:          absolute;
+				opacity:           0;
+				cursor:            pointer;
+			}
+			#box img.current{
+				opacity:           1;
+			}
+			#box1{
+				position:          absolute;
+				top:               155px;
+				right:             10px;
+				color:             black;
+			}
+			#box1 span{
+				display:           inline-block;
+				margin-right:      10px;
+				font-size:         12px;
+				width:             20px;
+				height:            20px;
+				line-height:       20px;
+				text-align:        center;
+				background:        #f4872f;
+				color:             white;
+				border-radius:     20px;
+				cursor:            pointer;
+			}
+			#box1 span.color{
+				background:        #91410c;
+			}
+		</style>
+		<script type = "text/javascript">
+		    window.onload = function () {
+		    	var aImg = document.getElementById('box').getElementsByTagName('img');
+		    	var oBox = document.getElementById("box");
+		    	var aSpan = document.getElementById('box1').getElementsByTagName('span');
+		    	var index = 0;
+		    	var timer =  play = null;
+		    	var s = false;
+                
+                oBox.onmouseover = function () {
+                    clearInterval(play);
+                    
+                }
+                oBox.onmouseout = function () {
+                    autoPlay();
+                }
+               
+                for(var j = 0; j < aSpan.length; j++) {
+                    aSpan[j].index = j;
+                    aSpan[j].onmouseover = function () {
+                    	
+                    	show(this.index);
+                    }
+                }
+                function autoPlay () {
+                	play = setInterval(function(){
+                        
+                		s || (index++);
+                		
+                		index >= (aImg.length) && (s = true,index = aImg.length - 1);
+                		s && (index--);
+                		index <= 0 && (s = false);
+                        
+                		show(index);
+                	},3000)
+                	
+                }
+                autoPlay();
+                function show (a) {
+                	index =  a;
+                    var alpha = 0;
+                	for(var j = 0; j < aSpan.length; j++) {
+                		aSpan[j].className = "";
+                	
+                	    aSpan[index].className = "color";
+                	    
+                	}
+
+                	for(var i = 0 ; i < aImg.length; i++) {
+                		aImg[i].style.opacity = "0";
+                		aImg[i].style.filter = "alpha(opacity = 0)";
+                	}
+                   
+                    timer = setInterval(function(){
+                        alpha += 2;
+                        alpha > 100 && (alpha = 100);
+                        aImg[index].style.opacity = alpha / 100;
+                        
+                        alpha == 100 && clearInterval(timer);
+                    },40)
+                }               		    	
+		    }
+		</script>
+	</head>
+	<body>
+	    <div id = "container">
+	        <div id = "box">
+	            <img src = "images/01.jpg" class = "current">
+	            <img src = "images/02.jpg">
+	            <img src = "images/03.jpg">
+	            <img src = "images/04.jpg">
+	            <img src = "images/05.jpg">
+            </div>
+            <div id = "box1">
+                <span class = "color">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+            </div>
+        </div>
+	</body>
+</html>

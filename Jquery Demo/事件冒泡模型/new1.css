@@ -1,0 +1,21 @@
+*{
+	margin:             0;
+	padding:            0;
+}
+body{
+	width:              300px;
+	border:             1px dotted green;
+	margin:             100px auto;
+}
+#content{
+	width:              260px;
+	border:             1px solid #333;
+	margin:             10px auto;
+	padding:            10px;
+}
+span{
+	display:            block;
+	margin:             10px 0 10px 40px;
+	background-color:   #ccc;
+	
+}

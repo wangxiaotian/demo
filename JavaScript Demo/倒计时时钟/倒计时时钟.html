@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>倒计时时钟</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+		    #container{
+		    	width:             300px;
+		    	height:            150px;
+		    	margin:            10px auto;
+		    	background:        #201e1e;
+		    	overflow:          hidden;
+		    }
+            #time{
+            	overflow:          hidden;
+            	margin-top:        20px;
+            	color:             white;
+            	text-align:        center;
+            	
+            	
+            }
+            span{
+                vertical-align:    middle;
+            	display:           inline-block;
+            	width:             38px;
+            	height:            23px;
+            	border:            1px solid #ccc;
+            	background:        #fff;
+            	margin:            0 10px;
+            	color:             black;
+            }
+            button{
+
+            	width:             258px;
+            	height:            50px;
+            	
+            	color:             #eee;
+            	font-size:         1.2em;
+            	font-weight:       500;
+            	letter-spacing:    2px;
+            	text-align:        center;
+            	line-height:       40px;
+            	margin:            30px 0px 0px 20px ;
+            	border:            5px solid;
+            	border-color:      #252222 #252222 #322c2c #252222;
+            	border-radius:     10px;
+            	background:        linear-gradient(#03ca1b 30%,#075810 70%);
+
+            	
+            	cursor:            pointer;
+            }
+            .current{
+                background:        linear-gradient(#df0a24 30%,#590709 70%);
+            }
+		</style>
+		<script type = "text/javascript">
+		    window.onload = function () {
+                var oSub = document.getElementsByTagName('button')[0];
+                var oSec = document.getElementById('sec');
+                var oMinu = document.getElementById('minu');
+                var timer = null;
+                oSub.onclick = function(){
+                    this.className = this.className == "current" ? "" : "current";
+                    this.innerHTML = this.className == "current" ? "暂停" : "开始";
+                    this.className == "current" ? (timer = setInterval(updatetime,1000),updatetime()) : clearInterval(timer);
+                }
+
+                function updatetime () {
+                    var sum = oMinu.innerHTML.replace(/^0/,"") * 60 + parseInt(oSec.innerHTML.replace(/^0/,""));
+                    
+                    if(sum <= 0){
+                        clearInterval(timer);
+                        return false;                 //此处不返回空值，继续点击按钮就会出现负值
+                    }
+                    sum--;
+                    oMinu.innerHTML = format(parseInt(sum/60));
+                    oSec.innerHTML = format(sum%60);
+                }
+
+                function format (a) {
+                    return a.toString().replace(/^(\d)$/,"0$1")
+                }
+                
+		    }
+		</script>
+	</head>
+	<body>
+	    <div id = "container">
+	        <div id = "time">
+	            <span id = "minu">00</span>分钟<span id = "sec">10</span>秒
+	        </div>
+	        <button>开始</button>
+	    </div>
+	</body>
+</html>

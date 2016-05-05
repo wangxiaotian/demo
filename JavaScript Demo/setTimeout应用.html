@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>setTimeout应用</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+			#container{
+				
+				width:             960px;
+				margin:            10px auto;
+				
+			}
+			dt{
+				float:             left;
+				vertical-align:    middle;
+				background:        linear-gradient(#6790b8 30%,#225d98 70%);
+				width:             119px;
+				height:            29px;
+				padding-top:       7px;
+				text-align:        center;
+				color:             white;
+                font-size:         0.9em;
+                cursor:            pointer;
+                border-right:      1px solid #ccc;
+                position:          relative;
+			}
+			dt.last{
+				border:            none;
+			}
+			dt span{
+				display:           inline-block;
+				
+				width:             110px;
+				height:            22px;
+				line-height:       22px;
+				color:             white;
+				
+				
+			 
+			}
+			dt span:hover{
+				background:        #b5c2cc;
+				font-weight:       bold;
+				border-radius:     5px;
+			}
+			p span{
+				list-style:        none;
+				float:             left;
+			}
+			p{
+				position:          absolute;
+				top:               40px;
+				width:             auto !important;
+				display:           none;
+				border:            1px solid #ccc;
+			}
+			
+		</style>
+
+		<script type = "text/javascript">
+		    window.onload = function(){
+		    	var aDt = document.getElementsByTagName('dt');
+		    	
+		    	var timer = null;
+		    	for(var i = 0; i < aDt.length; i++) {
+		    		aDt[i].index = i;
+		    		aDt[i].onmouseover = function () {
+                        var aP = this.getElementsByTagName('p')[0];
+                        
+                        timer = setTimeout(function(){
+                        	aP.style.display = "block"
+                        },500)
+		    		}
+		    		aDt[i].onmouseout = function () {
+		    			var aP = this.getElementsByTagName('p')[0];
+                        timer = setTimeout(function(){
+
+                        	aP.style.display = "none"
+                        },500)
+		    		}
+		    	}
+		    	
+		    }
+		</script>
+	</head>
+	<body>
+	    <div id = "container">
+	        <dl>
+	            <dt><span>站长之家</span></dt>
+	            <dt><span>行业资讯</span>
+	                <p>
+	                    <span><a href = "javascript:;">业界动态</a></span>
+	                    <span><a href = "javascript:;">收购融资</a></span>
+	                    <span><a href = "javascript:;">门户动态</a></span>
+	                    <span><a href = "javascript:;">搜索引擎</a></span>
+	                    <span><a href = "javascript:;">网络游戏</a></span>
+	                    <span><a href = "javascript:;">电子商务</a></span>
+	                    <span><a href = "javascript:;">广告传媒</a></span>
+	                    <span><a href = "javascript:;">厂商开发</a></span>
+	                </p>
+	            </dt>
+	            <dt><span>站长在线</span>
+	                <p>
+	                    <span><a href = "javascript:;">收购融资</a></span>
+	                    <span><a href = "javascript:;">好战推荐</a></span>
+	                    <span><a href = "javascript:;">站长聚会</a></span>
+	                    <span><a href = "javascript:;">站长访谈</a></span>
+	                    <span><a href = "javascript:;">站长茶馆</a></span>
+	                    <span><a href = "javascript:;">网站排行</a></span>
+	                </p>
+	            </dt>
+	            <dt><span>网站运营</span>
+	                <p>
+	                    <span><a href = "javascript:;">建站经验</a></span>
+	                    <span><a href = "javascript:;">策划盈利</a></span>
+	                    <span><a href = "javascript:;">搜索优化</a></span>
+	                    <span><a href = "javascript:;">网站推广</a></span>
+	                    <span><a href = "javascript:;">免费资源</a></span>
+	                </p>
+	            </dt>
+	            <dt><span>设计在线</span>
+	                <p>
+	                    <span><a href = "javascript:;">酷站推荐</a></span>
+	                    <span><a href = "javascript:;">网页设计</a></span>
+	                    <span><a href = "javascript:;">WEB标准</a></span>
+	                    <span><a href = "javascript:;">视频处理</a></span>
+	                    <span><a href = "javascript:;">设计活动</a></span>
+	                </p>
+	            </dt>
+	            <dt><span>网络编程</span>
+	                <p>
+	                    <span><a href = "javascript:;">Asp编程</a></span>
+	                    <span><a href = "javascript:;">Php编程</a></span>
+	                    <span><a href = "javascript:;">.Net编程</a></span>
+	                    <span><a href = "javascript:;">Xml编程</a></span>
+	                    <span><a href = "javascript:;">Access</a></span>
+	                    <span><a href = "javascript:;">Mssql</a></span>
+	                    <span><a href = "javascript:;">Mysql</a></span>
+	                </p>
+	            </dt>
+	            <dt><span>联盟资讯</span>
+	                <p>
+	                    <span><a href = "javascript:;">网赚技巧</a></span>
+	                    <span><a href = "javascript:;">联盟点评</a></span>
+	                    <span><a href = "javascript:;">联盟介绍</a></span>
+	                    <span><a href = "javascript:;">联盟动态</a></span>
+	                </p>
+	            </dt>
+	            <dt class = "last"><span>服务器</span>
+	                <p>
+	                    <span><a href = "javascript:;">Web服务器</a></span>
+	                    <span><a href = "javascript:;">Ftp服务器</a></span>
+	                    <span><a href = "javascript:;">Mail服务器</a></span>
+	                    <span><a href = "javascript:;">Dns服务器</a></span>
+	                    <span><a href = "javascript:;">Win服务器</a></span>
+	                    <span><a href = "javascript:;">spannux服务器</a></span>
+	                    <span><a href = "javascript:;">安全防护</a></span>
+	                    <span><a href = "javascript:;">虚拟主机</a></span>
+	                </p>
+	            </dt>
+	        </dl>
+	    </div>
+	</body>
+</html>

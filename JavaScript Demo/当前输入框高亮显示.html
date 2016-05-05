@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>当前输入框高亮显示</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+			#container{
+				width:             400px;
+				margin:            10px auto;
+				border:            2px solid #ff6600;
+				background:        #fef4eb;
+				border-radius:     5px;
+			}
+			h4{
+				border-bottom:     2px solid #ff6600;
+				background:        #ffebd7;
+				padding:           5px 0 5px 10px;
+				color:             #d77103;
+			}
+			label{
+				display:           inline-block;
+				width:             70px;
+				text-align:        right;
+				margin:            20px 0px 0 30px;
+                color:             #333;
+                font-size:         0.8em;
+			}
+			input{
+                vertical-align:    middle;
+                height:            30px;
+                width:             200px;
+                font-size:         1.0em;
+                border-radius:     5px;
+
+                border:            1px #ccc solid;
+                border-top:        2px #ddd solid;
+			}
+			button{
+				display:           inline-block;
+				margin:            10px 0 10px 0;
+				width:             100px;
+				height:            30px;
+                background:        #ff6600;
+                color:             white;
+                border:            none;
+                border-radius:     5px;
+                font-size:         16px;
+                letter-spacing:    5px;
+                cursor:            pointer;
+			}
+			.current{
+				background:        #f2a6a6;
+				border:            1px #f43737 solid;
+			}
+		</style>
+		<script type = "text/javascript">
+		    window.onload = function () {
+		    	var aInput = document.getElementsByTagName('input');
+		    	for(var i = 0; i < aInput.length; i++) {
+		    		aInput[i].onfocus = function () {
+		    			this.className = "current";
+		    		}
+		    		aInput[i].onblur = function () {
+		    			this.className = "";
+		    		}
+		    	}
+		    }
+		</script>
+	</head>
+	<body>
+	    <div id = "container">
+	        <h4>用户登录</h4>
+	        
+	            <label>用户名：</label><input type = "text"><br>
+	            <label>密码：</label><input type = "text"><br>
+	            <label></label><button>登录</button>
+	        
+	    </div>
+	</body>
+</html>

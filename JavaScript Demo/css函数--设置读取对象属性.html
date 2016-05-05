@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>css函数---设置/读取对象属性</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+			#box{
+				width:             400px;
+				height:            200px;
+				margin:            10px auto;
+				background-color:  rgb(254,244,235);
+				border:            1px solid #eb6625;
+			}
+			#box span{
+                display:           inline-block;
+                padding:           0 10px;
+                height:            30px;
+                line-height:       30px;
+                text-align:        center;
+                margin:            10px 0px 0px 5px;
+                border-radius:     5px;
+                color:             white;
+                background:        #db3704;
+                font-size:         0.9em;
+                cursor:            pointer;
+			}
+			.box_color{
+                width:         330px;
+                height:        100px;
+                background:    rgb(239,248,255);
+                border:        1px solid #0579f0;
+			}
+			.span_color{
+                background:    #0751e8;
+			}
+		</style>
+		<script type = "text/javascript">
+		    function css(obj,attr,val) {
+		    	
+		    	switch(arguments.length) {
+		    		case 2:
+		    		    
+		    		    if(typeof arguments[1] == "string"){
+                            return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj,null)[attr];
+		    		    }else{
+		    		    	
+		    		    	for(var i in attr) {
+		    		    		obj.style[i] = attr[i];
+		    		    	}
+		    		    }
+		    		break;
+		    		case 3:
+		    		    obj.style[attr] = val;
+		    		    break;
+		    		default:
+		    		    alert("错误参数");
+		    	}
+		    }
+		    window.onload = function () {
+		    	var oBox = document.getElementById('box');
+		    	var oSpan = oBox.getElementsByTagName('span');
+		    	oSpan[0].onclick = function () {
+		    		
+		    		var val = "width:" + css(oBox,"width") + "\n" +  "height" + css(oBox,"height") + "\n" + "background:" + css(oBox,"backgroundColor");
+		    		alert(val);
+		    	}
+		    	oSpan[1].onclick = function () {
+		    		
+		    		css(oBox,{
+		    			width : "330px",
+		    			height: "100px",
+		    			background: "rgb(239,248,255)",
+		    			borderColor: "#0579f0"
+		    		})
+		    		for(var i = 0; i < oSpan.length; i++){
+		    			css(oSpan[i],"backgroundColor","#0751e8")
+		    		}
+		    	}
+		    	oSpan[2].onclick = function () {
+		    		css(oBox,{
+		    			width: "400px",
+		    			height: "200px",
+		    			background: "rgb(254,244,235)",
+		    			borderColor: "#eb6625"
+		    		})
+		    		for(var i = 0; i < oSpan.length; i++) {
+		    			css(oSpan[i],"backgroundColor","#db3704")
+		    		}
+		    	}
+		    }
+		</script>
+	</head>
+	<body>
+	    <div id = "box">
+	        <span>GetStyle</span><span>SetStyle</span><span>DefaultStyle</span>
+	    </div>
+	</body>
+</html>

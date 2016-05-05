@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html> 
+    <head>
+	    <meta charset = "utf-8"/>
+		<title>商店-主页</title>
+		<link rel = "stylesheet" type = "text/css" href = "styles/index.css">
+		<link rel = "stylesheet" type = "text/css" href = "styles/reuse.css">
+		<link rel = "stylesheet" type = "text/css" href = "styles/skin.css">
+		<link rel = "stylesheet" type = "text/css" href = "styles/cssfile.css" id = "cssfile">
+		<script src = "scripts/jquery-1.12.2.js"></script>
+		<script src = "scripts/jquery.cookie.js"></script>
+		
+	</head>
+	<body>
+	    <header>
+		    <div id = "top">
+			    <img src = "images/logo.gif" id = "logo"/>
+				<input type = "text" id = "topI" name = "search" value = "请输入商品名称">
+				<ul id = "skin">
+				    <li id = "skin_0" class = "selected" title = "灰色">灰色</li>
+					<li id = "skin_1" title = "紫色">紫色</li>
+					<li id = "skin_2" title = "红色">红色</li>
+					<li id = "skin_3" title = "天蓝色">天蓝色</li>
+					<li id = "skin_4" title = "橙色">橙色</li>
+					<li id = "skin_5" title = "浅绿色">浅绿色</li>
+				</ul>
+			</div>
+			<nav>
+		        <ul>
+				    <li><a href = "" title = "">首页</a></li>
+				    <li><a href = "" title = "">品牌</a>
+					    <div class = "navbox">
+					    <dl>
+						    <dt><a href = "">品牌：</a></dt>
+							<dd>
+							    <span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">安踏</a></span>
+								<span><a href = "">奥康</a></span>
+								<span><a href = "">骆驼</a></span>
+								<span><a href = "">特步</a></span>
+								<span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">特步</a></span>
+							</dd>
+						</dl>
+						<dl class = "dlbox">
+							<dt><a href = "">品牌：</a></dt>
+							<dd>
+							    <span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">安踏</a></span>
+								<span><a href = "">奥康</a></span>
+								<span><a href = "">骆驼</a></span>
+								<span><a href = "">特步</a></span>
+								<span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">特步</a></span>
+							</dd>
+						</dl>
+					    </div>
+					</li>
+				    <li><a href = "" title = "">女装</a>
+					    <div class = "navbox">
+					    <dl>
+						    <dt><a href = "">女装：</a></dt>
+							<dd>
+							    <span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">安踏</a></span>
+								<span><a href = "">奥康</a></span>
+								<span><a href = "">骆驼</a></span>
+								<span><a href = "">特步</a></span>
+								<span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">特步</a></span>
+							</dd>
+						</dl>
+						<dl class = "dlbox">
+						<dt><a href = "">女装：</a></dt>
+							<dd>
+							    <span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">安踏</a></span>
+								<span><a href = "">奥康</a></span>
+								<span><a href = "">骆驼</a></span>
+								<span><a href = "">特步</a></span>
+								<span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">特步</a></span>
+							</dd>
+						</dl>
+						</div>
+					</li>
+				    <li><a href = "" title = "">男装</a>
+					    <div class = "navbox">
+					    <dl>
+						    <dt><a href = "">男装：</a></dt>
+							<dd>
+							    <span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">安踏</a></span>
+								<span><a href = "">奥康</a></span>
+								<span><a href = "">骆驼</a></span>
+								<span><a href = "">特步</a></span>
+								<span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">特步</a></span>
+							</dd>
+						</dl>
+						<dl class = "dlbox">
+						<dt><a href = "">男装：</a></dt>
+						    <dd>
+							    <span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">安踏</a></span>
+								<span><a href = "">奥康</a></span>
+								<span><a href = "">骆驼</a></span>
+								<span><a href = "">特步</a></span>
+								<span><a href = "">耐克</a></span>
+								<span><a href = "">阿迪达斯</a></span>
+								<span><a href = "">达芙妮</a></span>
+								<span><a href = "">李宁</a></span>
+								<span><a href = "">特步</a></span>
+							</dd>
+						</dl>
+						</div>
+					</li>
+				    <li><a href = "" title = "">鞋包配饰</a></li>
+			    </ul>
+		    </nav>	
+		</header>
+		
+		<div id = "content">
+		    <h3 class = "search">商品分类</h3>
+		    <div id = "search">
+			    
+				
+				<h4>推荐品牌</h4>
+				<table>
+				    <tr><td><a href = "" title = "">耐克</a></td><td><a href = "" title = "" class = "promoted">阿迪达斯<s class = "hot"></s></a></td></tr>
+					<tr><td><a href = "" title = "">达芙妮</a></td><td><a href = "" title = "">李宁</a></td></tr>
+					<tr><td><a href = "" title = "">安踏</a></td><td><a href = "" title = "">奥康</a></td></tr>
+					<tr><td><a href = "" title = "" class = "promoted">骆驼<s class = "hot"></s></a></td><td><a href = "" title = "">特步</a></td></tr>
+				</table>
+				<h4>女装</h4>
+				<table>
+				    <tr><td><a href = "" title = "">呢大衣</a></td><td><a href = "" title = "">t恤</a></td></tr>
+					<tr><td><a href = "" title = "">羽绒</a></td><td><a href = "" title = "">衬衫</a></td></tr>
+					<tr><td><a href = "" title = "">羊绒衫</a></td><td><a href = "" title = "">针织</a></td></tr>
+					<tr><td><a href = "" title = "">连衣裙</a></td><td><a href = "" title = "">皮外套</a></td></tr>
+				</table>
+				<h4>男装</h4>
+				<table>
+				    <tr><td><a href = "" title = "">衬衫</a></td><td><a href = "" title = "">卫衣</a></td></tr>
+					<tr><td><a href = "" title = "">T恤衫</a></td><td><a href = "" title = "">夹克</a></td></tr>
+					<tr><td><a href = "" title = "">大皮衣</a></td><td><a href = "" title = "">风衣</a></td></tr>
+					<tr><td><a href = "" title = "">牛仔裤</a></td><td><a href = "" title = "">西服</a></td></tr>
+				</table>
+				<h4>鞋包配饰</h4>
+				<table>
+				    <tr><td><a href = "" title = "">围巾</a></td><td><a href = "" title = "">旅行箱</a></td></tr>
+					<tr><td><a href = "" title = "">真皮包</a></td><td><a href = "" title = "">韩版</a></td></tr>
+					<tr><td><a href = "" title = "">达芙妮</a></td><td><a href = "" title = "">单肩包</a></td></tr>
+					<tr><td><a href = "" title = "">毛线</a></td><td><a href = "" title = "">清仓靴子</a></td></tr>
+				</table>
+			</div>
+			<!--以上为商品分类-->
+			<div id = "lunbo">
+			    <a id = "lunboTop" href = "nogo">
+				    <img src = "images/ads/1.jpg" alt = "" class = "hide">
+					<img src = "images/ads/2.jpg" alt = "" class = "hide">
+					<img src = "images/ads/3.jpg" alt = "" class = "hide">
+					<img src = "images/ads/4.jpg" alt = "" class = "hide">
+					<img src = "images/ads/5.jpg" alt = "" class = "hide">
+				</a>
+				<div id = "lunboBottom">
+				    
+					    <a href = "#1" title = "">
+						    <p><span>相约情人节</span></br>
+							<span>全场119元起</span></p>
+						</a>
+						
+					
+					
+					    <a href = "#2" title = "">
+						    <p><span>新款上线</span></br>
+							<span>全场357元起</span></p>
+						</a>
+					
+					
+					    <a href = "#3" title = "">
+						    <p><span>愤怒小鸟特卖</span></br>
+							<span>全场89元起</span></p>
+						</a>
+					
+					
+					    <a href = "#4" title = "">
+						    <p><span>男鞋促销第一</span></br>
+							<span>全场3.1折起</span></p>
+						</a>
+					
+					
+					    <a href = "#5" title = "">
+						    <p><span>春季新品发布</span></br>
+							<span>全场4.1折起</span></p>
+						</a>
+					
+				</div>
+			</div>
+			<!--以上为轮播选项-->
+			<div id = "sidebarTop">
+				<a class = "amaze" href = "#nogo"><img src = "images/upload/20120216.jpg" alt = "全场两折起"/></a>
+			</div>
+			<div id = "sidebarBottom">
+				<h4>最新动态</h4>
+				<ul>
+					<li><a href = "" title = "[活动] 伊伴春鞋迎春大促">[活动] 伊伴春鞋迎春大促</a></li>
+				    <li><a href = "" title = "[活动] 千百度冬靴新品火热让利">[活动] 千百度冬靴新品火热让利</a></li>
+					<li><a href = "" title = "[活动] COEY秋冬新品全场2.3折起">[活动] COEY秋冬新品全场2.3折起</a></li>
+					<li><a href = "" title = "[活动] 伊伴春鞋迎春大促">[活动] 伊伴春鞋迎春大促</a></li>
+					<li><a href = "" title = "[活动] 千百度冬靴新品火热让利">[活动] 千百度冬靴新品火热让利</a></li>
+				</ul>
+			</div>
+			<!--以上为边栏选项-->
+			<div id = "bottom">
+				
+				<div id = "bottomList">
+				    <a href = "" title = "" class = "bottomList current"><span>运动</span></a>
+				    <a href = "" title = "" class = "bottomList"><span>女鞋</span></a>
+				    <a href = "" title = "" class = "bottomList"><span>男鞋</span></a>
+				    <a href = "" title = "" class = "bottomList"><span>童鞋</span></a>
+				</div>
+				<h4>品牌活动</h4>
+				<div id = "box1">
+				<ul> 
+					<li><img src = "images/upload/20120217.jpg" alt = "耐克"/><p><a href = "" title = "">耐克1</a></p></li>
+					<li><img src = "images/upload/20120218.jpg" alt = "阿迪达斯"/><p><a href = "" title = "">阿迪达斯1</a></p></li>
+					<li><img src = "images/upload/20120219.png" alt = "李宁"/><p><a href = "" title = "">李宁1</a></p></li>
+					<li><img src = "images/upload/20120220.png" alt = "安踏"/><p><a href = "" title = "">安踏1</a></p></li>
+					<li><img src = "images/upload/20120217.jpg" alt = "耐克"/><p><a href = "" title = "">耐克2</a></p></li>
+					<li><img src = "images/upload/20120218.jpg" alt = "阿迪达斯"/><p><a href = "" title = "">阿迪达斯2</a></p></li>
+					<li><img src = "images/upload/20120219.png" alt = "李宁"/><p><a href = "" title = "">李宁2</a></p></li>
+					<li><img src = "images/upload/20120220.png" alt = "安踏"/><p><a href = "" title = "">安踏2</a></p></li>
+					<li><img src = "images/upload/20120217.jpg" alt = "耐克"/><p><a href = "" title = "">耐克3</a></p></li>
+					<li><img src = "images/upload/20120218.jpg" alt = "阿迪达斯"/><p><a href = "" title = "">阿迪达斯3</a></p></li>
+					<li><img src = "images/upload/20120219.png" alt = "李宁"/><p><a href = "" title = "">李宁3</a></p></li>
+					<li><img src = "images/upload/20120220.png" alt = "安踏"/><p><a href = "" title = "">安踏3</a></p></li>
+					<li><img src = "images/upload/20120217.jpg" alt = "耐克"/><p><a href = "" title = "">耐克4</a></p></li>
+					<li><img src = "images/upload/20120218.jpg" alt = "阿迪达斯"/><p><a href = "" title = "">阿迪达斯4</a></p></li>
+					<li><img src = "images/upload/20120219.png" alt = "李宁"/><p><a href = "" title = "">李宁4</a></p></li>
+					<li><img src = "images/upload/20120220.png" alt = "安踏"/><p><a href = "" title = "">安踏4</a></p></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		
+		<footer>
+		    <p>Copyright © 2009-2016 JaneShop Inc.</p>
+		</footer>
+		<script src = "scripts/reuse.js"></script>
+		
+		<script src = "scripts/ads.js"></script>
+		
+		<script src = "scripts/lunbo.js"></script>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>事件练习：封装兼容性添加、删除时间的函数</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+			input{
+				margin-left:       10px;
+			}
+		</style>
+		<script type = "text/javascript">
+		/*
+		//方法一
+		    window.onload = function () {
+		    	var aInput = document.getElementsByTagName('input');
+		    	var s = false;
+		    	aInput[0].onclick = function () {
+		    		s && alert("万古青天一株莲");
+		    	}
+		    	aInput[1].onclick = function () {
+		    		aInput[0].value = "青莲";
+		    		s = true;
+		    	}
+                aInput[2].onclick = function () {
+                	aInput[0].value = "被封印";
+                	s = false;
+                }
+		    }
+		*/
+		//使用addEventListener事件绑定可实现 “事件绑定的嵌套/条件绑定”。
+		    var EventUtil = {
+		    	//浏览器有病吧，爆出参数引用错误。改了几遍又改回原来样子，又不报错了。。
+		    	addHandler : function ( oelt,event,handler){
+                    oelt.addEventListener ? oelt.addEventListener(event,handler,false) : oelt.attachEvent("on" + event,handler);
+                },
+                removeHandler : function (oelt,event,handler) {
+                	oelt.removeEventListener ? oelt.removeEventListener(event,handler,false) : oelt.detachEvent("on" + event,handler);
+                },
+		    	addLoadHandler : function(handler){
+		    		this.addHandler(window,"load",handler)
+		    	}
+		    }
+		    EventUtil.addLoadHandler(function(){
+		    	var aInput = document.getElementsByTagName('input');
+		    	function handler () {
+		    		alert("万古青天一株莲");
+		    	}
+		    	//添加绑定，和绑定事件
+		    	EventUtil.addHandler(aInput[1],"click",function(){
+                    EventUtil.addHandler(aInput[0],"click",handler);
+                    aInput[0].value = "青莲";
+		    	});
+		    	//解除绑定，移除绑定事件
+		    	EventUtil.addHandler(aInput[2],"click",function() {
+		    		EventUtil.removeHandler(aInput[0],"click",handler);
+		    		
+		    		aInput[0].value = "被封印";
+		    	})
+		    })
+
+		</script>
+	</head>
+	<body>
+	    <input type = "submit" value = "被封印"><input type = "submit" value = "解除封印"><input type = "submit" value = "施加封印">
+	</body>
+</html>

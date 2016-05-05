@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>模拟select控件</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+			body{
+				font-size:         12px;
+			}
+            #box{
+            	width:             400px;
+            	margin:            10px auto;
+                position:          relative;
+            }
+            #box form{
+            	width:             100%;
+            	height:            35px;
+            	
+            	line-height:       35px;
+            	background:        linear-gradient(#e4e4e4 30%,#b5b5b5 70%);
+            	border-radius:     5px;
+            }
+            #box form span{
+            	display:           inline-block;
+            	height:            20px;
+            	line-height:       20px;
+            	width:             200px;
+            	margin:            0 0 0 20px;
+            	border-radius:     5px;
+            	cursor:            pointer;
+            	background:        #727272;
+            	padding:           2px 0 2px 5px;
+            	color:             white;
+            	text-align:        left;
+
+            }
+            a{
+            	text-decoration:   none;
+            }
+            
+            #box form a{
+            	display:           inline-block;
+            	background:        #fff;
+            	width:             60px;
+            	height:            20px;
+            	line-height:       20px;
+            	padding:           2px;
+                border-radius:     2px;
+                color:             #333;
+                text-align:        center;
+                letter-spacing:    5px;
+            }
+            a:visited{
+                color:             #333;
+            }
+            #box form a:hover{
+            	color:             red;
+            }
+            li{
+            	list-style:        none;
+            	border-bottom:     1px dotted #fff;
+            	height:            25px;
+            	line-height:       25px;
+            	padding-left:      10px;
+            	cursor:            pointer;
+            }
+            li.last{
+            	border:            none;
+            }
+            li:hover{
+            	background:        #a99d9d;
+            }
+            ul{
+            	width:             200px;
+            	border:            1px solid #333;
+                background:        #3c3737;
+                color:             white;
+                position:          absolute;
+                top:               33px;
+                left:              20px;
+                display:           none;
+            } 
+		</style>
+		<script type = "text/javascript">
+		    window.onload = function () {
+		    	var oSel = document.getElementById('sel').getElementsByTagName('span')[0];
+		    	var oUl = document.getElementsByTagName('ul')[0];
+                var aLi = document.getElementsByTagName('li');
+		    	oSel.onclick = function (event) {
+		    		oUl.style.display = oUl.style.display == "block" ? "none" : "block";
+		    		event.cancelBubble=true; 
+		    	}
+		    	document.onclick = function () {
+		    		oUl.style.display = "none";
+                    
+		    	}
+                for(var i = 0; i < aLi.length; i++) {
+                	aLi[i].onclick = function () {
+                		oSel.innerHTML = this.innerHTML;
+                	}
+                }
+		    }
+		</script>
+	</head>
+	<body>
+        <div id = "box">
+            <form id = "sel">
+                <span>请选择游戏名称</span>
+                <a href = "javascript:;">搜索</a>
+            </form>
+            
+            <ul>
+                <li>地下城与勇士</li>
+                <li>英雄联盟</li>
+                <li>神墓</li>
+                <li>长生界</li>
+                <li>诛仙</li>
+                <li class = "last">凡人修仙传</li>
+            </ul>
+           
+        </div>
+	    
+	</body>
+</html>

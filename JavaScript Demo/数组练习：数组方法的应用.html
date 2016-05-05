@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset = "utf-8">
+		<title>数组练习：数组方法的使用</title>
+		<style type = "text/css">
+		    *{
+			    margin:            0;
+				padding:           0;
+			}
+			pre{
+				border:            1px dotted green;
+				background:        #eee;
+				color:             green;
+				font-size:         0.8em;
+				margin:            20px 0 10px 10px;
+				padding-top:       10px;
+				text-align:        left;
+			}
+			input{
+				margin:            0 0 0 10px;
+			}
+		</style>
+		<script type = "text/javascript">
+		    window.onload = function () {
+		    	var aInput = document.getElementsByTagName('input');		    	
+		    	var oPre = document.getElementsByTagName('pre');
+		    	var arry = [];
+		    	var s = true;
+                var s2 = true;
+		    	function getArry(str) {
+                    arry.length = 0;
+                    str = str.split(",");
+                    for(var i in str) {
+                    	arry[i] = str[i]
+                    }
+                    return arry;
+		    	}
+		    	//头部删除January(1)按钮切换		    	
+		    	aInput[0].onclick = function () {
+                    arry = getArry(oPre[0].innerHTML);
+                    s ? 
+                    (arry.shift(),
+                    oPre[0].innerHTML = arry.join(),
+                    this.value = this.value.replace("删除","添加"),
+                    s = false) :
+                    (arry.unshift("January(1)"),
+                    oPre[0].innerHTML = arry.join(), //不以逗号分隔的数组会认为只有一个元素
+                    this.value = this.value.replace("添加","删除"),
+                    s = true);
+		    	}
+                //尾部删除December(12)按钮切换
+                aInput[1].onclick = function () {
+                	arry = getArry(oPre[0].innerHTML);
+                	s2 ? (arry.pop(),this.value = this.value.replace("删除","添加"),oPre[0].innerHTML = arry.join(),s2 = false) : 
+                	    (arry.push("December(12)"),this.value = this.value.replace("添加","删除"),oPre[0].innerHTML = arry.join(),s2 = true) ;
+                }
+                //复制数组
+                aInput[2].onclick = function () {
+                	arry = getArry(oPre[1].innerHTML);
+                    oPre[1].innerHTML = arry.concat(arry).toString().replace(/\s/g,""); //不知为何产生的空格，是开头的缩进.
+
+
+                }
+                //还原数组第二项
+                aInput[3].onclick = function () {
+                	arry = getArry(oPre[1].innerHTML);
+                	arry.length = 10;
+                	oPre[1].innerHTML = arry.join();
+                }
+                //还原数组第三项
+                aInput[4].onclick = function () {
+                	arry = ["red","green","blue","white","yellow","black","brown"]
+                	oPre[2].innerHTML = arry.join();
+                }
+                //删除前三项
+                aInput[5].onclick = function () {
+                	arry = getArry(oPre[2].innerHTML);
+                	arry.splice(0,3);
+                	oPre[2].innerHTML = arry.join();
+                }
+                //删除第二至三项
+                aInput[6].onclick = function () {
+                	arry = getArry(oPre[2].innerHTML);
+                	arry.splice(1,2);
+                	oPre[2].innerHTML = arry.join();
+                }
+                //在第二项后插入（orange,purple)
+                aInput[7].onclick = function () {
+                	arry = getArry(oPre[2].innerHTML);
+                	arry.splice(2,0,"orange","purple");
+                	oPre[2].innerHTML = arry.join();
+                }
+                //替换第二项和第三项(实际上是用split()方法的删除和插入)
+                aInput[8].onclick = function () {
+                	arry = getArry(oPre[2].innerHTML);
+                	arry.splice(1,2,"1","2");
+                	oPre[2].innerHTML = arry.join();
+                }
+
+		    }
+		</script>
+	</head>
+	<body>
+	<div id = "box1">
+	<pre>
+	January(1),February(2),March(3),April(4),May(5),June(6),July(7),Aguest(8),September(9),October(10),November(11),December(12)
+	</pre>
+	<input type = "submit" value = "删除January(1)"><input type = "submit" value = "删除December(12)">
+	</div>
+	<div id = "box2">
+	<pre>
+	0,1,2,3,4,5,6,7,8,9
+	</pre>
+	<input type = "submit" value = "复制"><input type = "submit" value = "还原">
+	</div>
+	<div id = "box3">
+	<pre>
+	red,green,blue,white,yellow,black,brown
+	</pre>
+	<input type = "submit" value = "还原"><input type = "submit" value = "删除前三项"><input type = "submit" value = "删除第二至三项"><input type = "submit" value = "在第二项后插入（orange,purple)"><input type = "submit" value = "替换第二项和第三项">
+	</div>
+	</body>
+</html>
