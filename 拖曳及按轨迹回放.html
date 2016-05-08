@@ -80,7 +80,7 @@
 		    		oBox.style.left = iL + "px";
 		    		oP[0].innerHTML = oBox.offsetLeft + "," + oBox.offsetTop;
 		    		oP[1].innerHTML = iL + "," + iT;
-		    		aPos.push({x:iL,y:iT});                //记录拖曳时aPos的坐标，这里涉及一个问题：数组记录刷新的时间间隔是多少呢？一个整数坐标值？？
+		    		aPos.push({x:iL,y:iT});                //记录拖曳时aPos的坐标，这里涉及一个问题：数组记录刷新的时间间隔是多少呢？或者没有时间间隔，当坐标值变化时就记录下
 		    		status();
 		    		return false;
 		    	}
