@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖曳及按轨迹回放</title>
+	<style>
+	    *{
+	    	margin:0;
+	    	padding:0;
+	    }
+		body{
+			background:#ccc;
+			position:relative;
+			font-family: '宋体';
+		}
+		.box{
+			position:absolute;
+			width:300px;
+			height:150px;
+			border:2px solid #fff;
+			background:#111;
+			cursor
+		}
+		h4{
+			margin:0;
+			border-bottom:2px solid #fff;
+			color:yellow;
+		    padding: 3px 0px 3px 150px;
+		    cursor:move;
+		    font-weight:100;
+		}
+		h4 span{
+			cursor:pointer;
+		}
+		.content{
+			color:#fff;
+			display:inline-block;
+			padding:15px 0 0 20px;
+		}
+		.content1,.content2,.content3{
+			color:yellow;
+			display:block;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var main = {
+				init : function(){
+					var self = this;
+                    
+                    self.oCon1 = document.getElementsByClassName('content1');
+                    self.oCon2 = document.getElementsByClassName('content2');
+                    self.oCon3 = document.getElementsByClassName('content3');
+                    self.s = false;
+                    self.disX = 0;
+                    self.disY = 0;
+                    self.showX = '200px';
+                    self.showY = '300px';
+                    self.initStatus();
+                    self.initValue();
+                    self.changingValue();
+				},
+				initStatus : function(){
+					self.oBox = document.getElementsByClassName('box')[0];
+                    self.oBtn = document.getElementById('btn'); 
+                    self.oBox.style.top = self.showY
+                    self.oBox.style.left = self.showX;
+                    self.showValue();
+				},
+				initValue : function(){
+					var self = this;
+                    oBox.onmousedown = function(event){
+                    	self.s = true;
+                        self.disX = event.clientX - this.offsetLeft;
+                        self.disY = event.clientY - this.offsetTop;
+                        self.showX = this.style.left;
+                        self.showY = this.style.top;
+                        self.showValue();
+                    }
+				},
+                changingValue : function(){
+                	var self = this;
+                	oBox.onmousemove = function(event){
+                		this.style.left = event.clientX - self.disX + 'px';
+                		this.style.top = event.clientY - self.disY + 'px';
+                        self.showX = this.style.left;
+                        self.showY = this.style.top;
+                        self.showValue();
+                	}
+                },
+                switchStatus : function(){
+                    oBox.onmouseup = function(){
+                    	self.s = false;
+                    	self.showX = this.style.left;
+                        self.showY = this.style.top;
+                        self.showValue();
+                    }
+                },
+                showValue : function(){
+                	var self = this;
+                	self.oCon1.innerHtml = self.s;
+                    self.oCon2.innerHtml = self.showY;
+                    self.oCon3.innerHtml = self.showX;
+                }
+			}
+			main.init();
+		}
+	</script>
+</head>
+<body>
+	<div class="box">
+	    <h4><span id = "btn">点击回放拖动轨迹</span></h4>
+		<div class="smallBox">
+			<span class="content">Drag：</span><span class="content1"></span>
+			<span class="content">offsetTop：</span><span class="content2"></span>
+			<span class="content">offsetLeft：</span><span class="content3"></span>
+		</div>
+	</div>
+</body>
+</html>
